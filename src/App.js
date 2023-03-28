@@ -34,6 +34,9 @@ export default function Board() {
     <>
       <div className="board-row">
         <div className="status">{status}</div>
+        <div className="restart" onClick={resartGame}>
+          restart
+        </div>
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
         <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
@@ -69,4 +72,8 @@ function calculateWinner(squares) {
     }
   }
   return null;
+}
+
+function resartGame() {
+  window.location.reload();
 }
